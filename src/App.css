@@ -1,38 +1,80 @@
 .App {
-  text-align: center;
+    text-align: center;
+    margin-top: 2rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App a {
+    margin: 2rem;
+    text-decoration: none;
+    color: black;
+    background: lightblue;
+    padding: 0.5rem;
+    border-radius: 0.2rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App a:hover {
+    color: blue;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.AddFriendsContainer {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    height: 15rem;
 }
 
-.App-link {
-  color: #61dafb;
+.AddFriends {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    border: 1px solid black;
+    width: 15%;
+    height: 100%;
+    line-height: 2;
+    border-radius: 0.5rem;
+    background: lightcyan;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.AddFriends button {
+    margin-top: 1rem;
+}
+
+.FriendContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.Friend {
+    border: 1px solid black;
+    width: 25%;
+}
+
+.LoginFormContainer {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    height: 15rem;
+}
+
+.LoginForm {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    border: 1px solid black;
+    width: 15%;
+    height: 100%;
+    line-height: 2;
+    border-radius: 0.5rem;
+    background: lightcyan;
+}
+
+.LoginForm button {
+    margin-top: 1rem;
 }
