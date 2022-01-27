@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import Login from './components/Login'
 import LogOut from './components/LogOut';
@@ -7,10 +7,13 @@ import { Link, Route, Switch} from 'react-router-dom';
 import AddFriends from './components/AddFriends';
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
 
-  let isLoggedIn = false
-
-  localStorage.getItem('token') ? isLoggedIn = true : isLoggedIn = false
+  useEffect(() => {
+    if(localStorage.getItem('token')){
+      setIsLoggedIn(true)
+    }
+  }, [])
 
   return (
     <div className="App">
@@ -21,8 +24,8 @@ function App() {
       <Switch>
         <Route exact path='/FriendsList' component={FriendsList} />
         <Route exact path='/AddFriends' component={AddFriends} />
-        <Route exact path="/Logout" component={LogOut} />
-        <Route exact path='/Login' component={Login} />
+        <Route exact path="/Logout" render={() => <LogOut setIsLoggedIn={setIsLoggedIn} />} />
+        <Route exact path='/Login' render={(props) =><Login {...props} setIsLoggedIn={setIsLoggedIn} /> } />
         <Route exact path='/' component={Login} />
       </Switch>
     </div>

@@ -25,6 +25,7 @@ export default class Login extends Component{
             localStorage.setItem('role', resp.data.role)
             localStorage.setItem('token',resp.data.token)
             localStorage.setItem('username',resp.data.username)
+            this.props.setIsLoggedIn(true)
             this.props.history.push('/FriendsList')
         }).catch(err => console.error(err))
     }
